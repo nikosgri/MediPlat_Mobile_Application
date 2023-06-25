@@ -1,0 +1,33 @@
+MDScreen:
+    name: "mainScreen"
+
+    BoxLayout:
+        orientation: "vertical"
+        ScrollView:
+            id: scroll_view
+            GridLayout:
+                id: file_list
+                cols: 1
+                size_hint_y: None
+                height: self.minimum_height
+                spacing: dp(10)
+                padding: dp(10)
+                # Τα αντικείμενα της λίστας θα προστεθούν δυναμικά
+        BoxLayout:
+            size_hint_y: None
+            height: dp(56)
+            padding: dp(8)
+            MDFloatingActionButton:
+                md_bg_color: 1, 1, 1, 1
+                icon: 'icons/create.png'
+                pos_hint: {"right": 1, "y": 0}
+                on_release: app.show_popup()
+    BoxLayout:
+        size_hint_y: None
+        height: dp(56)
+        padding: dp(8)
+        MDLabel:
+            id: filename_label
+            text: ""
+            theme_text_color: "Secondary"
+
