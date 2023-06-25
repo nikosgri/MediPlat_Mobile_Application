@@ -1,0 +1,59 @@
+MDScreen:
+    name: "welcomeScreen"
+    MDFloatLayout:
+        md_bg_color: 1, 1, 1, 1
+        Image:
+            source: "icons/medoffice_icon.JPG"
+            pos_hint: {"center_x": .18, "center_y": .90}
+        Image:
+            source: "icons/home_screen.jpg"
+            size_hint: .8, .8
+            pos_hint: {"center_x": .5, "center_y": .65}
+        MDLabel:
+            text: "MedOffice"
+            font_name: "medium.ttf"
+            font_size: "30sp"
+            pos_hint: {"center_y": .38}
+            halign: "center"
+            color: rgba(34, 34, 34, 255)
+        MDLabel:
+            text: "Make your daily work better!"
+            font_name: "medium.ttf"
+            font_size: "20sp"
+            size_hint_x: .90
+            pos_hint:{"center_x": .5, "center_y": .32}
+            halign: "center"
+            color: rgba(34, 34, 34, 255)
+        Button:
+            text:"LOGIN"
+            size_hint: .66, .065
+            pos_hint: {"center_x": .5, "center_y": .18}
+            font_name: "medium.ttf"
+            background_color: 0, 0, 0, 0
+            on_release:
+                root.manager.transition.direction = "left"
+                root.manager.current = "login"
+            canvas.before:
+                Color:
+                    rgb: rgba(52, 0, 231, 255)
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius: [5]
+        Button:
+            text:"SIGN UP"
+            size_hint: .66, .065
+            pos_hint: {"center_x": .5, "center_y": .09}
+            font_name: "medium.ttf"
+            background_color: 0, 0, 0, 0
+            color: rgba(52, 0, 231, 255)
+            on_release:
+                root.manager.transition.direction = "left"
+                root.manager.current = "signUpScreen"
+            canvas.before:
+                Color:
+                    rgb: rgba(52, 0, 231, 255)
+                Line:
+                    width: 1.2
+                    rounded_rectangle: self.x, self.y, self.width, self.height, 5, 5, 5, 5, 100
+
