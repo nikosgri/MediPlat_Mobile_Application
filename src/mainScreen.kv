@@ -1,0 +1,63 @@
+Screen:
+    name: "mainScreen"
+    BoxLayout:
+        orientation: "vertical"
+
+        BoxLayout:
+            size_hint_y: None
+            height: dp(56)
+            padding: dp(8)
+            spacing: dp(8)
+
+            MDIconButton:
+                icon: "magnify"
+                pos_hint: {"center_y": 0.5}
+                on_release: app.search_function(search_field.text)
+
+            MDTextField:
+                id: search_field
+                hint_text: "Αναζήτηση"
+                size_hint_x: 0.8
+                pos_hint: {"center_y": 0.5}
+                on_text: app.search_function(self.text)
+
+        ScrollView:
+            id: scroll_view
+            size_hint: 1, None
+            height: root.height - self.y - dp(56)
+            GridLayout:
+                id: file_list
+                cols: 1
+                size_hint_y: None
+                height: self.minimum_height
+                spacing: dp(10)
+                padding: dp(10)
+
+        BoxLayout:
+            size_hint_y: None
+            height: dp(56)
+            padding: dp(8)
+            MDFloatingActionButton:
+                md_bg_color: 1, 1, 1, 1
+                icon: 'icons/create.png'
+                pos_hint: {"right": 1, "y": 0}
+                on_release: app.show_popup()
+
+    BoxLayout:
+        size_hint_y: None
+        height: dp(56)
+        padding: dp(8)
+        MDLabel:
+            id: filename_label
+            text: ""
+            markup: True
+            theme_text_color: "Secondary"
+            size_hint_y: None
+            height: self.texture_size[1]
+            padding: "10dp", "5dp"
+            canvas.before:
+                Color:
+                    rgba: (0, 0, 0, 0)
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
