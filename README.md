@@ -1,8 +1,31 @@
-# MediPlat_Mobile_Application
-This is a simple smartphone application that is made with the framework kivy/kivymd and the python programming language.
-## The "problem", that becomes an idea for the project.
-The company that I used to work has to do with sales of medical products. Every product that the company is selling contains two useful numbers such as REF number and Batch/lot number that characterize a product. So, when an employee of the company was selling a product to a customer, should fill a proper excel file that the company has with the proper informations such as the REF number the description of the product, the batch/lot number and also the quantity. At the same time the excel file should have more informations such as the customer name, the date that the customer took the product and other informations that the company must have in order to create a bill. This was very time-consuming operation and I decided to create a mobile application for every employee of the company.
-### This is the proper excel file that every employee should fill.
+# Mobile Application
+Welcome to the MediPlat Mobile Application, a powerful tool designed to streamline the sales process of medical products using the Kivy and KivyMD frameworks alongside Python. This application is tailored for healthcare professionals, making it easier to manage sales data efficiently.
+## Project Overview
+In my previous role at a medical product sales company, I noticed a significant challenge: employees spent excessive time filling out Excel files with crucial product information. Each product was identified by a REF number and a Batch/Lot number, and every sale required extensive documentation, including:
+
+Product REF number
+Product description
+Batch/Lot number
+Quantity sold
+Customer name
+Sale date
+This time-consuming process motivated me to develop the MediPlat Mobile Application to simplify and automate these tasks for our sales team.
 ![Markdown symbol](https://github.com/nikosgri/MediPlat_Mobile_Application/blob/master/charges.png)https://github.com/nikosgri/MediPlat_Mobile_Application/blob/master/charges.png) 
-## Operations of the application
-I have created a real time database to the firebase console. There I have attached all the product codes and descriptions like json format. This database can only approach a valid email address that has the domain of the company. When the user creates a profile and enters into the application, automatically can create the proper excel file by scanning the data-matrix QR code of the products. First he enters the proper infromations such as the clinic, that is going to sell the products, the data, the name of the patient and other useful stuf. When this part is done, we can move to scanning method where when the camera capture a QR code then splits the GS1-128 structure into pieces in order to identify the product. When its done, it communicates with the database and it is writing at the proper row the product informations. It also gives the oportunity to the user to add product details through keyboard, in case of the scanning operation fails to read the datamatrix, or in case of a product does not contain a QR code. When This operation is over at the main screen of the application will appear a label with the proper name of the excel file, which is different for every excel of charge that user wants to create. For example every excel file creates automaticaly its name by the  informations  that the user has gave to the application. At that time if the user wants to send the excel file at the back office of the company to create the bill, all it has to do is to click the label that needs and it will appear a pop up window that will contain two cities of Greece ("Athens", "Larisa"). At those places the company has a back office and each place has its own clinics. So if the employee is at the area of "Larisa" he will send the excel at the back office of Larisa and the same will do with the back office of Athens if he is at the area of Athens. When the user makes the choice automatically the excel will be send to the proper email addresses. The application has also a search bar the can help the user find an excel more easier.
+## Application Features
+### Real-Time Database Integration
+The MediPlat application connects to a real-time Firebase database, securely storing product codes and descriptions in JSON format. Only valid company email addresses can access this database, ensuring data integrity and security.
+### User-Friendly Profile Setup
+Upon creating a profile, users can quickly generate Excel files by scanning the Data-Matrix QR codes associated with the products. The process is straightforward:
+
+Enter essential details, such as the clinic name, date of sale, and patient name.
+Use the camera to scan the QR code, which decodes the GS1-128 structure to identify the product.
+If scanning fails, users can manually input product details.
+### Seamless Excel File Generation
+Once the necessary information is collected, the application automatically generates a uniquely named Excel file for each transaction based on the provided data.
+### Effortless Submission to Back Office
+Users can easily send the generated Excel file to the appropriate back office for billing. When ready to submit, simply click on the file label, and a pop-up will prompt the user to select a location—Athens or Larisa. The application will then send the file to the designated email address corresponding to the chosen city.
+### Enhanced Search Functionality
+The application includes a convenient search bar, enabling users to quickly locate specific Excel files, further enhancing usability and efficiency.
+
+## Conclusion
+The MediPlat Mobile Application is designed to eliminate the inefficiencies of manual data entry in medical sales, providing a streamlined and user-friendly experience for employees. By automating the sales documentation process, we empower our team to focus more on customer service and less on paperwork.
